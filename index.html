@@ -26,8 +26,13 @@
         <li><a>Account</a></li>
       </ul>
 
+      <!-- AUTH MESSAGES -->
+      <div>
+        <p id="auth-message"></p>
+      </div>
+
       <!-- REGISTER -->
-      <form>
+      <form id="register">
         <label>Email</label>
         <input type="email" name="credentials[email]">
         <label>Password</label>
@@ -38,7 +43,7 @@
       </form>
 
       <!-- LOGIN -->
-      <form>
+      <form id="login">
         <label>Email</label>
         <input type="email" name="credentials[email]">
         <label>Password</label>
@@ -47,16 +52,20 @@
       </form>
 
       <!-- LOGOUT -->
-      <input type="button" value="Logout">
+      <input type="button" value="Logout" id="logout">
 
       <!-- CHANGE PASSWORD -->
-      <form>
+      <form id="change-password">
         <label>Old Password</label>
         <input type="password" name="passwords[old]">
         <label>New Password</label>
         <input type="password" name="passwords[new]">
         <input type="submit" value="Reset">
       </form>
+
+      <!-- ACCOUNT -->
+
+      <!-- NOTE -->
 
     </body>
 </html>
