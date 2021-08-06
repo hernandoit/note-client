@@ -1,1 +1,8 @@
 @import '~bootstrap/scss/bootstrap';
+
+ul {
+  // Removes the bullets
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
