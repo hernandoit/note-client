@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Note</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -10,8 +10,53 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+      <!-- CUSTOM SCSS -->
+      <link rel="stylesheet" href="app/styles/index.scss">
     </head>
     <body>
-      <h1>Browser Template</h1>
+
+      <!-- NAVBAR -->
+      <ul>
+        <li><a>Note</a></li>
+        <li><a>Login</a></li>
+        <li><a>Register</a></li>
+        <li><a>+</a></li>
+        <li><a>-</a></li>
+        <li><a>Account</a></li>
+      </ul>
+
+      <!-- REGISTER -->
+      <form>
+        <label>Email</label>
+        <input type="email" name="credentials[email]">
+        <label>Password</label>
+        <input type="password" name="credentials[password]">
+        <label>Confirm Password</label>
+        <input type="password" name="credentials[password_confirmation]">
+        <input type="submit" value="Register">
+      </form>
+
+      <!-- LOGIN -->
+      <form>
+        <label>Email</label>
+        <input type="email" name="credentials[email]">
+        <label>Password</label>
+        <input type="password" name="credentials[password]">
+        <input type="submit" value="Login">
+      </form>
+
+      <!-- LOGOUT -->
+      <input type="button" value="Logout">
+
+      <!-- PASSWORD RESET -->
+      <form>
+        <label>Old Password</label>
+        <input type="password" name="passwords[old]">
+        <label>New Password</label>
+        <input type="password" name="passwords[new]">
+        <input type="submit" value="Reset">
+      </form>
+
     </body>
 </html>
