@@ -17,14 +17,15 @@
     <body>
 
       <!-- NAVBAR -->
-      <ul>
-        <li><a>Note</a></li>
-        <li><a>Login</a></li>
-        <li><a>Register</a></li>
-        <li><a>+</a></li>
-        <li><a>-</a></li>
-        <li><a>Account</a></li>
-      </ul>
+      <nav>
+        <ul>
+          <li><a>Note</a></li>
+          <li><a id="register-nav">Register</a></li>
+          <li><a id="login-nav">Login</a></li>
+          <li><a id="add-note-nav">Add Note</a></li>
+          <li><a id="account-nav">Account</a></li>
+        </ul>
+      </nav>
 
       <!-- AUTH MESSAGES -->
       <div>
@@ -33,6 +34,9 @@
 
       <!-- REGISTER -->
       <form id="register">
+        <div>
+          <h3>Register</h3>
+        </div>
         <label>Email</label>
         <input type="email" name="credentials[email]">
         <label>Password</label>
@@ -44,28 +48,49 @@
 
       <!-- LOGIN -->
       <form id="login">
+        <div>
+          <h3>Login</h3>
+        </div>
         <label>Email</label>
         <input type="email" name="credentials[email]">
         <label>Password</label>
         <input type="password" name="credentials[password]">
-        <input type="submit" value="Login">
+        <input type="submit" value="Log In">
       </form>
-
-      <!-- LOGOUT -->
-      <input type="button" value="Logout" id="logout">
 
       <!-- CHANGE PASSWORD -->
       <form id="change-password">
+        <div>
+          <h3>Change Password</h3>
+        </div>
         <label>Old Password</label>
         <input type="password" name="passwords[old]">
         <label>New Password</label>
         <input type="password" name="passwords[new]">
-        <input type="submit" value="Reset">
+        <!-- <input type="button" value="Cancel"> -->
+        <input type="submit" value="Submit">
       </form>
 
       <!-- ACCOUNT -->
+      <div id="account">
+        <div><h3>Account Settings</h3></div>
+        <!-- <input type="button" value="Cancel" id="change-password-cancel"> -->
+        <input type="button" value="Change Password" id="change-password-btn">
+
+        <!-- LOGOUT -->
+        <input type="button" value="Log Out" id="logout">
+      </div>
 
       <!-- NOTE -->
+      <div id="note">
+        <div>
+          <h3>Note</h3>
+        </div>
+        <input type="button" value="Save Note" id="save-note">
+        <input type="button" value="Delete Note" id="delete-note">
+        <h2 name="note[title]">Sample Note Heading</h2>
+        <p name="note[text]">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+      </div>
 
     </body>
 </html>

@@ -15,7 +15,7 @@ const onRegister = (e) => {
     // handle successful API calls with .then
     .then(ui.onRegisterSuccess)
     // Handle failed API calls with .catch
-    .catch()
+    .catch(ui.onRegisterFailure)
 }
 
 const onLogin = (e) => {
@@ -26,13 +26,13 @@ const onLogin = (e) => {
 
   api.login(data)
     .then(ui.onLoginSuccess)
-    .catch()
+    .catch(ui.onLoginFailure)
 }
 // we don't pass the (e) event because we already have the token and there is nothing to submit
 const onLogout = () => {
   api.logout()
     .then(ui.onLogoutSuccess)
-    .catch()
+    .catch(ui.onLogoutFailure)
 }
 
 const onChangePassword = (e) => {
@@ -49,12 +49,63 @@ const onChangePassword = (e) => {
   }
   api.changePassword(passwords)
     .then(ui.onChangePasswordSuccess)
-    .catch()
+    .catch(ui.onChangePasswordFailure)
+}
+
+// NAVBAR //
+const onShowRegister = () => {
+  $('#register').show()
+  $('#login').hide()
+  $('#change-password').hide()
+}
+
+const onShowLogin = () => {
+  $('#register').hide()
+  $('#login').show()
+  $('#change-password').hide()
+}
+
+const onShowChangePassword = () => {
+  $('#register').hide()
+  $('#login').hide()
+  $('#change-password').show()
+  $('#account').hide()
+  $('#note').hide()
+}
+
+const onShowAccount = () => {
+  $('#register').hide()
+  $('#login').hide()
+  $('#change-password').hide()
+  $('#account').show()
+  $('#note').hide()
+}
+// IM HERE //
+const onAddNote = () => {
+
+}
+
+const onDeleteNote = () => {
+
 }
 
 module.exports = {
   onRegister,
   onLogin,
   onLogout,
-  onChangePassword
+  onChangePassword,
+  onShowRegister,
+  onShowLogin,
+  onShowChangePassword,
+  onShowAccount,
+  onAddNote,
+  onDeleteNote
 }
+
+// ORDERING/ STRUCTURE
+// register
+// login
+// change-password
+// auth-message
+// account
+// note

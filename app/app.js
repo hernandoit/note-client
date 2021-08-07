@@ -6,10 +6,42 @@
 const authEvents = require('./auth/events')
 
 $(() => {
-  // link to our events.js logic
+  // NAVBAR //
+  $('#register-nav').on('click', authEvents.onShowRegister)
+  $('#login-nav').on('click', authEvents.onShowLogin)
+  $('#account-nav').on('click', authEvents.onShowAccount)
+  $('#add-note-nav').on('click', authEvents.onAddNote)
+
+  // FORM //
   $('#register').on('submit', authEvents.onRegister)
   $('#login').on('submit', authEvents.onLogin)
-  // no form attached, nothing to submit
-  $('#logout').on('click', authEvents.onLogout)
   $('#change-password').on('submit', authEvents.onChangePassword)
+
+  // LINKS //
+  // no form attached, nothing to submit/ regular click event
+  $('#logout').on('click', authEvents.onLogout)
+  $('#delete-note').on('click', authEvents.onDeleteNote)
+  $('#change-password-btn').on('click', authEvents.onShowChangePassword)
+  $('#change-password-cancel').on('click', () => {
+
+  })
+
+  // default visibility states
+  $('#register').hide()
+  $('#login').hide()
+  $('#change-password').hide()
+  $('#account').hide()
+  $('#account-nav').hide()
+  $('#note').hide()
+  $('#add-note-nav').hide()
 })
+
+// ORDERING/ STRUCTURE
+// register
+// login
+// change-password
+// auth-message
+// account
+// note
+
+// change password cancel  // account cancel //  dismisses the user’s current screen and brings them back to their previous screen.
