@@ -112,6 +112,38 @@ const onChangePasswordFailure = () => {
   $('#auth-message').text('Unable to change password please refresh your browser!')
 }
 
+const onCreateNoteSuccess = () => {
+  $('auth-message').text('Note has been created successfully')
+}
+
+const onCreateNoteFailure = () => {
+  $('auth-message').text('Unable to create Note')
+}
+
+const onReadNoteSuccess = () => {
+  $('auth-message').text('Showing all created Notes')
+}
+
+const onReadNoteFailure = () => {
+  $('auth-message').text('Unable to show all Notes')
+}
+
+const onUpdateNoteSuccess = () => {
+  $('auth-message').text('Note was updated successfully')
+}
+
+const onUpdateNoteFailure = () => {
+  $('auth-message').text('Unable to update Note')
+}
+
+const onDestroyNoteSuccess = () => {
+  $('auth-message').text('Note was successfully deleted')
+}
+
+const onDestroyNoteFailure = () => {
+  $('auth-message').text('Unable to delete Note')
+}
+
 module.exports =
  {
    onRegisterSuccess,
@@ -121,7 +153,15 @@ module.exports =
    onLogoutSuccess,
    onLogoutFailure,
    onChangePasswordSuccess,
-   onChangePasswordFailure
+   onChangePasswordFailure,
+   onCreateNoteSuccess,
+   onCreateNoteFailure,
+   onReadNoteSuccess,
+   onReadNoteFailure,
+   onUpdateNoteSuccess,
+   onUpdateNoteFailure,
+   onDestroyNoteSuccess,
+   onDestroyNoteFailure
  }
 
 // ORDERING/ STRUCTURE

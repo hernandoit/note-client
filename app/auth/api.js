@@ -37,50 +37,57 @@ const changePassword = (passwords) => {
     }
   })
 }
-// create note
-const createNote = (data) => {
+
+const createNote = (note) => {
   return $.ajax({
-    url: config.apiUrl + '/sign-in',
+    url: config.apiUrl + '/notes',
     method: 'POST',
-    data
+    data: note,
+    headers: {
+      Authorization: 'Bearer ' + store.token
+    }
   })
 }
-// destroy note
+
+const readNote = (notes) => {
+  return $.ajax({
+    url: config.apiUrl + '/notes',
+    method: 'GET',
+    notes,
+    headers: {
+      Authorization: 'Bearer ' + store.token
+    }
+  })
+}
+
+const updateNote = (note) => {
+  return $.ajax({
+    url: config.apiUrl + '/notes',
+    method: 'PATCH',
+    data: note,
+    headers: {
+      Authorization: 'Bearer ' + store.token
+    }
+  })
+}
+
 const destroyNote = () => {
   return $.ajax({
-    url: config.apiUrl + '/note',
+    url: config.apiUrl + '/notes',
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.token
     }
   })
 }
-// update note
-const updateNote = (passwords) => {
-  return $.ajax({
-    url: config.apiUrl + '/notes',
-    method: 'PATCH',
-    data: passwords,
-    headers: {
-      Authorization: 'Bearer ' + store.token
-    }
-  })
-}
-// show note
-const showNotes = (data) => {
-  return $.ajax({
-    url: config.apiUrl + '/sign-up',
-    method: 'GET',
-    data
-  })
-}
+
 module.exports = {
   register,
   login,
   logout,
   changePassword,
   createNote,
-  destroyNote,
+  readNote,
   updateNote,
-  showNotes
+  destroyNote
 }

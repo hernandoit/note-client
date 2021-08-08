@@ -19,10 +19,10 @@
       <!-- NAVBAR -->
       <nav>
         <ul>
-          <li><a>Note</a></li>
+          <li id="home"><a>Note</a></li>
           <li><a id="register-nav">Register</a></li>
           <li><a id="login-nav">Login</a></li>
-          <li><a id="add-note-nav">Add Note</a></li>
+          <!-- <li><a id="add-note-nav">Add Note</a></li> -->
           <li><a id="account-nav">Account</a></li>
         </ul>
       </nav>
@@ -82,15 +82,16 @@
       </div>
 
       <!-- NOTE -->
-      <div id="note">
-        <div>
-          <h3>Note</h3>
-        </div>
-        <input type="button" value="Save Note" id="save-note">
-        <input type="button" value="Delete Note" id="delete-note">
-        <h2 name="note[title]">Sample Note Heading</h2>
-        <p name="note[text]">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-      </div>
+        <form id="note">
+          <input type="submit" value="Create Note" id="create-note">
+          <input type="submit" value="Read Note" id="read-note">
+          <input type="submit" value="Update Note" id="update-note">
+          <input type="submit" value="Delete Note" id="destroy-note">
+            <label>Title</label>
+            <input type="text" name="note[title]">
+            <label>Body</label>
+            <textarea name="note[text]"></textarea>
+        </form>
 
     </body>
 </html>

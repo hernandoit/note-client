@@ -6,21 +6,24 @@
 const authEvents = require('./auth/events')
 
 $(() => {
-  // NAVBAR //
+  // NAVBAR LINKS //
   $('#register-nav').on('click', authEvents.onShowRegister)
   $('#login-nav').on('click', authEvents.onShowLogin)
   $('#account-nav').on('click', authEvents.onShowAccount)
-  $('#add-note-nav').on('click', authEvents.onAddNote)
+  // $('#add-note-nav').on('click', authEvents.onAddNote)
 
-  // FORM //
+  // FORMS //
   $('#register').on('submit', authEvents.onRegister)
   $('#login').on('submit', authEvents.onLogin)
   $('#change-password').on('submit', authEvents.onChangePassword)
+  $('#create-note').on('submit', authEvents.onCreateNote)
+  $('#read-note').on('submit', authEvents.onReadNote)
+  $('#update-note').on('submit', authEvents.onUpdateNote)
 
   // LINKS //
   // no form attached, nothing to submit/ regular click event
   $('#logout').on('click', authEvents.onLogout)
-  $('#delete-note').on('click', authEvents.onDeleteNote)
+  // $('#destroy-note').on('click', authEvents.onDestroyNote)
   $('#change-password-btn').on('click', authEvents.onShowChangePassword)
   $('#change-password-cancel').on('click', () => {
 
@@ -32,7 +35,7 @@ $(() => {
   $('#change-password').hide()
   $('#account').hide()
   $('#account-nav').hide()
-  $('#note').hide()
+  // $('#note').hide()
   $('#add-note-nav').hide()
 })
 

@@ -53,6 +53,11 @@ const onChangePassword = (e) => {
 }
 
 // NAVBAR //
+const onLogo = () => {
+// if user is logged in go back to notes home
+// else back to home screen
+}
+
 const onShowRegister = () => {
   $('#register').show()
   $('#login').hide()
@@ -80,12 +85,36 @@ const onShowAccount = () => {
   $('#account').show()
   $('#note').hide()
 }
-// IM HERE //
-const onAddNote = () => {
 
+const onCreateNote = (e) => {
+  e.preventDefault()
+
+  const form = e.target
+  const data = getFormFields(form)
+
+  const note = {
+    note: {
+      text: data.note.text,
+      title: data.note.title
+    }
+  }
+
+  console.log(note)
+
+  api.createNote(note)
+    .then(ui.onCreateNoteSuccess)
+    .catch(ui.onCreateNoteFailure)
 }
 
-const onDeleteNote = () => {
+const onReadNote = (e) => {
+  e.preventDefault()
+}
+
+const onUpdateNote = (e) => {
+  e.preventDefault()
+}
+
+const onDestroyNote = () => {
 
 }
 
@@ -94,12 +123,15 @@ module.exports = {
   onLogin,
   onLogout,
   onChangePassword,
+  onLogo,
   onShowRegister,
   onShowLogin,
   onShowChangePassword,
   onShowAccount,
-  onAddNote,
-  onDeleteNote
+  onCreateNote,
+  onReadNote,
+  onUpdateNote,
+  onDestroyNote
 }
 
 // ORDERING/ STRUCTURE
