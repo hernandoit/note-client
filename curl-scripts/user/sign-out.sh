@@ -1,12 +1,11 @@
-# production: 'https://tic-tac-toe-api-production.herokuapp.com',
-
- # development: 'https://tic-tac-toe-api-development.herokuapp.com'
+# production: 'https://calm-taiga-11081.herokuapp.com',
+# development: 'http://localhost:4741'
 
 # TOKEN="need token from login" "a" sh curl-scripts/sign-out.sh
 
 #!/bin/bash
 
-curl "https://tic-tac-toe-api-development.herokuapp.com/sign-out" \
+curl "http://localhost:4741/sign-out" \
   --include \
   --request DELETE \
   --header "Content-Type: application/json" \

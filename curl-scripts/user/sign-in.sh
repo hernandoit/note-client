@@ -1,10 +1,11 @@
-# production: 'https://tic-tac-toe-api-production.herokuapp.com',
+# production: 'https://calm-taiga-11081.herokuapp.com',
+# development: 'http://localhost:4741'
 
- # development: 'https://tic-tac-toe-api-development.herokuapp.com'
+# EMAIL="a@a.info" PW="a" sh curl-scripts/user/sign-in.sh
 
-# EMAIL="a@a.info" PASSWORD="a" sh curl-scripts/user/sign-in.sh
+#!/bin/bash
 
-curl "https://tic-tac-toe-api-development.herokuapp.com/sign-in" \
+curl "http://localhost:4741/sign-in" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
