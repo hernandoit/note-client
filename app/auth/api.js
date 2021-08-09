@@ -62,7 +62,7 @@ const readNote = (notes) => {
 
 const updateNote = (note) => {
   return $.ajax({
-    url: config.apiUrl + '/notes',
+    url: config.apiUrl + '/notes/',
     method: 'PATCH',
     data: note,
     headers: {

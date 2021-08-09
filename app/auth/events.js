@@ -99,8 +99,6 @@ const onCreateNote = (e) => {
     }
   }
 
-  console.log(note)
-
   api.createNote(note)
     .then(ui.onCreateNoteSuccess)
     .catch(ui.onCreateNoteFailure)

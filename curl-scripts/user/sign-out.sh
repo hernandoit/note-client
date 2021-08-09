@@ -5,7 +5,7 @@
 
 #!/bin/bash
 
-curl "http://localhost:4741/sign-out" \
+curl "https://calm-taiga-11081.herokuapp.com" \
   --include \
   --request DELETE \
   --header "Content-Type: application/json" \

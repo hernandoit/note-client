@@ -8,10 +8,11 @@ This is the Front end for our Note app.
 4. Install dependencies with ```npm install```.
 
 ## `Important Links`
-- [API Source Code](https://github.com/hernandoit/note)
-- [Deployed API](https://calm-taiga-11081.herokuapp.com)
+- [API Source Code](https://github.com/hernandoit/express-api-note)
+- [Deployed API](https://protected-river-47536.herokuapp.com/)
 - [Deployed Client Source Code](https://github.com/hernandoit/note-client)
 - [Deployed Client](https://hernandoit.github.io/note-client/)
+
 
 ## `Planning Story`
 

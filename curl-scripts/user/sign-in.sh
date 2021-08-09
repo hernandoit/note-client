@@ -5,7 +5,7 @@
 
 #!/bin/bash
 
-curl "http://localhost:4741/sign-in" \
+curl "https://calm-taiga-11081.herokuapp.com" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \

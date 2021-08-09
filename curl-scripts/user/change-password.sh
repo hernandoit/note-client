@@ -5,7 +5,7 @@
 
 #!/bin/bash
 
-curl "http://localhost:4741/change-password" \
+curl "https://calm-taiga-11081.herokuapp.com" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \

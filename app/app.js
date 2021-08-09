@@ -10,7 +10,6 @@ $(() => {
   $('#register-nav').on('click', authEvents.onShowRegister)
   $('#login-nav').on('click', authEvents.onShowLogin)
   $('#account-nav').on('click', authEvents.onShowAccount)
-  // $('#add-note-nav').on('click', authEvents.onAddNote)
 
   // FORMS //
   $('#register').on('submit', authEvents.onRegister)
@@ -23,7 +22,7 @@ $(() => {
   // LINKS //
   // no form attached, nothing to submit/ regular click event
   $('#logout').on('click', authEvents.onLogout)
-  // $('#destroy-note').on('click', authEvents.onDestroyNote)
+  $('#destroy-note').on('click', authEvents.onDestroyNote)
   $('#change-password-btn').on('click', authEvents.onShowChangePassword)
   $('#change-password-cancel').on('click', () => {
 

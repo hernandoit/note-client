@@ -6,7 +6,7 @@
 #!/bin/bash
 
 # don't use a password you use for any real websites!
-curl "http://localhost:4741/sign-up" \
+curl "https://calm-taiga-11081.herokuapp.com" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
