@@ -104,9 +104,11 @@ const onCreateNote = (e) => {
     .catch(ui.onCreateNoteFailure)
 }
 
-const onReadNote = (response) => {
-  // console.log('im inside on read note in events')
-  // console.log(response.note)
+const onReadNote = (e) => {
+  e.preventDefault()
+
+  const form = e.target
+  const data = getFormFields(form)
 
   // const notes = {
   //   note: {
@@ -118,7 +120,7 @@ const onReadNote = (response) => {
   // }
   // console.log(notes)
 
-  api.readNote()
+  api.readNote(data)
     .then(ui.onReadNoteSuccess)
     .catch(ui.onReadNoteFailure)
 }

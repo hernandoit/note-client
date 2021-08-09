@@ -41,7 +41,7 @@ const onLoginSuccess = (response) => {
   $('#note').show()
   $('#add-note-nav').show()
   store.token = response.user.token
-  store.password = response.password
+  store.user = response.user
 }
 
 const onLoginFailure = () => {
@@ -125,7 +125,9 @@ const onReadNoteSuccess = (response) => {
   // console.log('im in on read note success')
   // console.log(response)
   $('#auth-message').text('Showing all created Notes')
-  $('#display-note').text(response.note.text + response.note.title)
+//   $('#display-note').html(
+//     <h3>Title: $(response.note.title) </h3>
+//     <p>Text: $(response.note.text)</p>)
 }
 
 const onReadNoteFailure = () => {
