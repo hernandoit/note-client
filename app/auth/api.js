@@ -49,11 +49,11 @@ const createNote = (note) => {
   })
 }
 
-const readNote = (notes) => {
+const readNote = (note) => {
   return $.ajax({
-    url: config.apiUrl + '/notes',
+    url: config.apiUrl + '/notes/' + store.note.id,
     method: 'GET',
-    notes,
+    data: note,
     headers: {
       Authorization: 'Bearer ' + store.token
     }
@@ -62,7 +62,7 @@ const readNote = (notes) => {
 
 const updateNote = (note) => {
   return $.ajax({
-    url: config.apiUrl + '/notes/',
+    url: config.apiUrl + '/notes/' + store.user.id,
     method: 'PATCH',
     data: note,
     headers: {
@@ -73,7 +73,7 @@ const updateNote = (note) => {
 
 const destroyNote = () => {
   return $.ajax({
-    url: config.apiUrl + '/notes',
+    url: config.apiUrl + '/notes/' + store.user.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.token

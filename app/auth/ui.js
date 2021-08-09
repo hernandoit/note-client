@@ -112,36 +112,37 @@ const onChangePasswordFailure = () => {
   $('#auth-message').text('Unable to change password please refresh your browser!')
 }
 
-const onCreateNoteSuccess = () => {
-  $('auth-message').text('Note has been created successfully')
+const onCreateNoteSuccess = (response) => {
+  $('#create-note').trigger('reset')
+  $('#auth-message').text('Note has been created successfully')
 }
 
 const onCreateNoteFailure = () => {
-  $('auth-message').text('Unable to create Note')
+  $('#auth-message').text('Unable to create Note')
 }
 
-const onReadNoteSuccess = () => {
-  $('auth-message').text('Showing all created Notes')
+const onReadNoteSuccess = (response) => {
+  $('#auth-message').text('Showing all created Notes')
 }
 
 const onReadNoteFailure = () => {
-  $('auth-message').text('Unable to show all Notes')
+  $('#auth-message').text('Unable to show Notes')
 }
 
 const onUpdateNoteSuccess = () => {
-  $('auth-message').text('Note was updated successfully')
+  $('#auth-message').text('Note was updated successfully')
 }
 
 const onUpdateNoteFailure = () => {
-  $('auth-message').text('Unable to update Note')
+  $('#auth-message').text('Unable to update the Note')
 }
 
 const onDestroyNoteSuccess = () => {
-  $('auth-message').text('Note was successfully deleted')
+  $('#auth-message').text('Note was successfully deleted')
 }
 
 const onDestroyNoteFailure = () => {
-  $('auth-message').text('Unable to delete Note')
+  $('#auth-message').text('Unable to delete Note')
 }
 
 module.exports =

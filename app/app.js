@@ -16,17 +16,15 @@ $(() => {
   $('#login').on('submit', authEvents.onLogin)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#create-note').on('submit', authEvents.onCreateNote)
-  $('#read-note').on('submit', authEvents.onReadNote)
   $('#update-note').on('submit', authEvents.onUpdateNote)
 
   // LINKS //
   // no form attached, nothing to submit/ regular click event
   $('#logout').on('click', authEvents.onLogout)
-  $('#destroy-note').on('click', authEvents.onDestroyNote)
   $('#change-password-btn').on('click', authEvents.onShowChangePassword)
-  $('#change-password-cancel').on('click', () => {
-
-  })
+  // $('#change-password-cancel').on('click', () => {})
+  $('#read-note').on('click', authEvents.onReadNote)
+  $('#destroy-note').on('click', authEvents.onDestroyNote)
 
   // default visibility states
   $('#register').hide()
@@ -34,7 +32,7 @@ $(() => {
   $('#change-password').hide()
   $('#account').hide()
   $('#account-nav').hide()
-  // $('#note').hide()
+  $('#note').hide()
   $('#add-note-nav').hide()
 })
 

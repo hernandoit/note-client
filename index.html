@@ -80,18 +80,33 @@
         <!-- LOGOUT -->
         <input type="button" value="Log Out" id="logout">
       </div>
-
-      <!-- NOTE -->
-        <form id="note">
-          <input type="submit" value="Create Note" id="create-note">
-          <input type="submit" value="Read Note" id="read-note">
-          <input type="submit" value="Update Note" id="update-note">
-          <input type="submit" value="Delete Note" id="destroy-note">
-            <label>Title</label>
-            <input type="text" name="note[title]">
-            <label>Body</label>
-            <textarea name="note[text]"></textarea>
+      <!-- NOTE CONTAINER -->
+      <div id="note">
+        <!-- CREATE NOTE -->
+        <form id="create-note">
+          <input type="submit" value="Create Note">
+          <label>Title</label>
+          <input type="text" name="note[title]">
+          <label>Body</label>
+          <textarea type="text" name="note[text]"></textarea>
         </form>
+
+        <!-- READ NOTE -->
+        <input type="button" value="Read Note" id="read-note">
+
+        <!-- UPDATE NOTE -->
+        <form id="update-note">
+          <input type="submit" value="Update Note">
+          <label>Body</label>
+          <textarea type="text" name="note[text]"></textarea>
+        </form>
+
+        <!-- DELETE NOTE -->
+        <input type="button" value="Delete Note" id="destroy-note">
+      </div>
+
+        <!-- DISPLAY NOTES -->
+        <div id="display-note"></div>
 
     </body>
 </html>

@@ -1,7 +1,7 @@
 const getFormFields = require('../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-// const store = require('./../store')
+const store = require('./../store')
 
 const onRegister = (e) => {
   // prevents the click event from refreshing the page
@@ -92,20 +92,30 @@ const onCreateNote = (e) => {
   const form = e.target
   const data = getFormFields(form)
 
-  const note = {
+  const notes = {
     note: {
       text: data.note.text,
       title: data.note.title
     }
   }
 
-  api.createNote(note)
+  api.createNote(notes)
     .then(ui.onCreateNoteSuccess)
     .catch(ui.onCreateNoteFailure)
 }
 
-const onReadNote = (e) => {
-  e.preventDefault()
+const onReadNote = () => {
+  const notes = {
+    note: {
+      text: store.note.text,
+      title: store.note.title,
+      owner: store.note.owner
+    }
+  }
+
+  api.readNote(notes)
+    .then(ui.onReadNoteSuccess)
+    .catch(ui.onReadNoteFailure)
 }
 
 const onUpdateNote = (e) => {
