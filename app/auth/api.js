@@ -49,11 +49,10 @@ const createNote = (note) => {
   })
 }
 
-const readNote = (note) => {
+const readNote = () => {
   return $.ajax({
     url: config.apiUrl + '/notes',
     method: 'GET',
-    data: note,
     headers: {
       Authorization: 'Bearer ' + store.token
     }

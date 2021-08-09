@@ -122,12 +122,20 @@ const onCreateNoteFailure = () => {
 }
 
 const onReadNoteSuccess = (response) => {
-  // console.log('im in on read note success')
-  // console.log(response)
   $('#auth-message').text('Showing all created Notes')
-//   $('#display-note').html(
-//     <h3>Title: $(response.note.title) </h3>
-//     <p>Text: $(response.note.text)</p>)
+  const notes = response.notes
+
+  let notesHtml = ''
+
+  notes.forEach(note => {
+    notesHtml +=
+    `<h3>Title: ${note.title} </h3>
+    <p>Text: ${note.text}</p>`
+  })
+  // $('#display-note').html(`
+  //   <h3>Title: ${response.note.title} </h3>
+  //   <p>Text: ${response.note.text}</p>`)
+  $('#display-note').html(notesHtml)
 }
 
 const onReadNoteFailure = () => {

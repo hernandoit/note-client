@@ -107,30 +107,26 @@ const onCreateNote = (e) => {
 const onReadNote = (e) => {
   e.preventDefault()
 
-  const form = e.target
-  const data = getFormFields(form)
-
-  // const notes = {
-  //   note: {
-  //     id: response.note.id,
-  //     text: response.note.text,
-  //     title: response.note.title,
-  //     owner: response.note.owner
-  //   }
-  // }
-  // console.log(notes)
-
-  api.readNote(data)
+  // console.log(store.user)
+  api.readNote()
     .then(ui.onReadNoteSuccess)
     .catch(ui.onReadNoteFailure)
 }
 
 const onUpdateNote = (e) => {
   e.preventDefault()
+
+  api.updateNote()
+    .then(ui.onUpdateNoteSuccess)
+    .catch(ui.onUpdateNoteFailure)
 }
 
-const onDestroyNote = () => {
+const onDestroyNote = (e) => {
+  e.preventDefault()
 
+  api.destroyNote()
+    .then(ui.onDestroyNoteSuccess)
+    .catch(ui.onDestroyNoteFailure)
 }
 
 module.exports = {
