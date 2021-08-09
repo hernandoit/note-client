@@ -104,16 +104,21 @@ const onCreateNote = (e) => {
     .catch(ui.onCreateNoteFailure)
 }
 
-const onReadNote = () => {
-  const notes = {
-    note: {
-      text: store.note.text,
-      title: store.note.title,
-      owner: store.note.owner
-    }
-  }
+const onReadNote = (response) => {
+  // console.log('im inside on read note in events')
+  // console.log(response.note)
 
-  api.readNote(notes)
+  // const notes = {
+  //   note: {
+  //     id: response.note.id,
+  //     text: response.note.text,
+  //     title: response.note.title,
+  //     owner: response.note.owner
+  //   }
+  // }
+  // console.log(notes)
+
+  api.readNote()
     .then(ui.onReadNoteSuccess)
     .catch(ui.onReadNoteFailure)
 }

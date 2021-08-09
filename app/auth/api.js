@@ -48,10 +48,10 @@ const createNote = (note) => {
     }
   })
 }
-
+// works without note.id portion
 const readNote = (note) => {
   return $.ajax({
-    url: config.apiUrl + '/notes/' + store.note.id,
+    url: config.apiUrl + '/notes',
     method: 'GET',
     data: note,
     headers: {
@@ -62,7 +62,7 @@ const readNote = (note) => {
 
 const updateNote = (note) => {
   return $.ajax({
-    url: config.apiUrl + '/notes/' + store.user.id,
+    url: config.apiUrl + '/notes/' + store.note.id,
     method: 'PATCH',
     data: note,
     headers: {
@@ -73,7 +73,7 @@ const updateNote = (note) => {
 
 const destroyNote = () => {
   return $.ajax({
-    url: config.apiUrl + '/notes/' + store.user.id,
+    url: config.apiUrl + '/notes/' + store.note.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.token

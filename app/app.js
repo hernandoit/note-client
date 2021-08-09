@@ -22,7 +22,6 @@ $(() => {
   // no form attached, nothing to submit/ regular click event
   $('#logout').on('click', authEvents.onLogout)
   $('#change-password-btn').on('click', authEvents.onShowChangePassword)
-  // $('#change-password-cancel').on('click', () => {})
   $('#read-note').on('click', authEvents.onReadNote)
   $('#destroy-note').on('click', authEvents.onDestroyNote)
 
@@ -44,4 +43,5 @@ $(() => {
 // account
 // note
 
+// $('#change-password-cancel').on('click', () => {})
 // change password cancel  // account cancel //  dismisses the user’s current screen and brings them back to their previous screen.

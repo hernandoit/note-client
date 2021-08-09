@@ -122,7 +122,10 @@ const onCreateNoteFailure = () => {
 }
 
 const onReadNoteSuccess = (response) => {
+  // console.log('im in on read note success')
+  // console.log(response)
   $('#auth-message').text('Showing all created Notes')
+  $('#display-note').text(response.note.text + response.note.title)
 }
 
 const onReadNoteFailure = () => {
