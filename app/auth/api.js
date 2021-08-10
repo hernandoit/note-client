@@ -48,16 +48,6 @@ const createNote = (note) => {
     }
   })
 }
-// VERSION 2.0 FEATURE //
-// const showNotes = () => {
-//   return $.ajax({
-//     url: config.apiUrl + '/notes',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Bearer ' + store.token
-//     }
-//   })
-// }
 
 const showNote = () => {
   return $.ajax({
@@ -70,8 +60,9 @@ const showNote = () => {
 }
 
 const updateNote = (data) => {
+  console.log(data)
   return $.ajax({
-    url: config.apiUrl + '/notes',
+    url: config.apiUrl + '/notes/' + data.note.id,
     method: 'PATCH',
     data,
     headers: {
@@ -82,7 +73,7 @@ const updateNote = (data) => {
 
 const destroyNote = (data) => {
   return $.ajax({
-    url: config.apiUrl + '/notes',
+    url: config.apiUrl + '/notes/' + data.note.id,
     method: 'DELETE',
     data,
     headers: {
@@ -97,7 +88,6 @@ module.exports = {
   logout,
   changePassword,
   createNote,
-  // showNotes,
   showNote,
   updateNote,
   destroyNote

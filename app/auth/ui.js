@@ -117,8 +117,6 @@ const onChangePasswordFailure = () => {
   $('#auth-message').text('Unable to change password please try again!')
   $('#account').hide()
   $('#account-nav').show()
-  // VERSION 2.0 FEATURE //
-  // $('#add-note-nav').hide()
   $('.note').hide()
 }
 
@@ -130,30 +128,14 @@ const onCreateNoteSuccess = (response) => {
 const onCreateNoteFailure = () => {
   $('#auth-message').text('Unable to create Note')
 }
-// VERSION 2.0 FEATURE
-// const onShowNotesSuccess = (response) => {
-//   $('#auth-message').text('Showing all created Notes')
-//   const notes = response.notes
-
-//   let notesHtml = ''
-
-//   notes.forEach((note) => {
-//     notesHtml += `<h3>Title: ${note.title} </h3>
-//     <p>Text: ${note.text}</p>`
-//   })
-
-//   $('#display-note').html(notesHtml)
-// }
-
-// const onShowNotesFailure = () => {
-//   $('#auth-message').text('Unable to show all Notes')
-// }
 
 const onShowNoteSuccess = (response) => {
   $('#create-note').hide()
   $('#update-note').hide()
-
+  $('#account-form').hide()
+  $('#display-notes').show()
   $('#auth-message').text('Showing users created Notes')
+
   const notes = response.notes
 
   let noteHtml = ''
@@ -174,6 +156,7 @@ const onShowNoteFailure = () => {
 }
 
 const onUpdateNoteSuccess = () => {
+  $('#update-note').trigger('reset')
   $('#auth-message').text('Note was updated successfully')
 }
 
@@ -182,6 +165,7 @@ const onUpdateNoteFailure = () => {
 }
 
 const onDestroyNoteSuccess = () => {
+  $('#destroy-note').trigger('reset')
   $('#auth-message').text('Note was successfully deleted')
 }
 
@@ -200,20 +184,10 @@ module.exports = {
   onChangePasswordFailure,
   onCreateNoteSuccess,
   onCreateNoteFailure,
-  // onShowNotesSuccess,
   onShowNoteSuccess,
-  // onShowNotesFailure,
   onShowNoteFailure,
   onUpdateNoteSuccess,
   onUpdateNoteFailure,
   onDestroyNoteSuccess,
   onDestroyNoteFailure
 }
-
-// ORDERING/ STRUCTURE
-// register
-// login
-// change-password
-// auth-message
-// account
-// note

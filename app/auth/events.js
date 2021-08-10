@@ -1,7 +1,6 @@
 const getFormFields = require('../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-// const store = require('./../store')
 
 const onRegister = (e) => {
   // prevents the click event from refreshing the page
@@ -52,14 +51,6 @@ const onChangePassword = (e) => {
     .catch(ui.onChangePasswordFailure)
 }
 
-// NAVBAR //
-
-// VERSION 2.0 FEATURE //
-// const onLogo = () => {
-// // if user is logged in go back to notes home
-// // else back to home screen
-// }
-
 const onShowRegisterForm = () => {
   $('#register').show()
   $('#login').hide()
@@ -85,22 +76,23 @@ const onShowAccountForm = () => {
   $('#login').hide()
   $('#change-password').hide()
   $('#account').show()
-  $('#note').hide()
+  $('#create-note').hide()
+  $('#display-notes').hide()
+  $('#update-note').hide()
+  $('#destroy-note').hide()
 }
 // BUTTONS FORM NAVBAR //
 const onShowCreateNote = () => {
   $('#register').hide()
   $('#login').hide()
   $('#change-password').hide()
-  // $('#display-note').hide()
   $('#account').hide()
   $('#create-note').show()
   $('#show-note').hide()
   $('#update-note').hide()
   $('#destroy-note').hide()
-  $('#display-notes').text(' ')
+  $('#display-notes').hide()
 }
-// const onShowNote
 
 const onShowUpdateNoteForm = () => {
   $('#register').hide()
@@ -143,14 +135,6 @@ const onCreateNote = (e) => {
     .then(ui.onCreateNoteSuccess)
     .catch(ui.onCreateNoteFailure)
 }
-// VERSION 2.0 SHOW ALL USERS NOTES FEATURE //
-// const onShowNotes = (e) => {
-//   e.preventDefault()
-
-//   api.showNotes()
-//     .then(ui.onShowNotesSuccess)
-//     .catch(ui.onShowNotesFailure)
-// }
 
 const onShowUsersNotes = (e) => {
   e.preventDefault()
@@ -187,7 +171,6 @@ module.exports = {
   onLogin,
   onLogout,
   onChangePassword,
-  // onLogo,
   onShowRegisterForm,
   onShowLoginForm,
   onShowChangePassword,
@@ -197,15 +180,6 @@ module.exports = {
   onShowUpdateNoteForm,
   onShowDestroyNoteForm,
   onCreateNote,
-  // onShowNotes,
   onUpdateNote,
   onDestroyNote
 }
-
-// ORDERING/ STRUCTURE
-// register
-// login
-// change-password
-// auth-message
-// account
-// note

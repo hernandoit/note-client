@@ -16,7 +16,6 @@ $(() => {
   $('#login').on('submit', authEvents.onLogin)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#create-note').on('submit', authEvents.onCreateNote)
-  // $('#read-note').on('submit', authEvents.onShowNote)
   $('#update-note').on('submit', authEvents.onUpdateNote)
   $('#destroy-note').on('submit', authEvents.onDestroyNote)
 
@@ -25,9 +24,6 @@ $(() => {
   $('#show-btn').on('click', authEvents.onShowUsersNotes)
   $('#update-btn').on('click', authEvents.onShowUpdateNoteForm)
   $('#destroy-btn').on('click', authEvents.onShowDestroyNoteForm)
-
-  // VERSION 2.0 FEATURE //
-  // $('#index-btn').on('click', authEvents.onShowNotes)
 
   // LINKS //
   // no form attached, nothing to submit/ regular click event
@@ -42,7 +38,6 @@ $(() => {
   $('#account').hide()
   $('#account-nav').hide()
 
-  // $('#add-note-nav').hide()
   $('#btn-nav').hide()
   $('#create-note').hide()
   $('#show-note').hide()
@@ -50,15 +45,4 @@ $(() => {
   $('#destroy-note').hide()
 })
 
-// ORDERING/ STRUCTURE
-// register
-// login
-// change-password
-// auth-message
-// account
-// note
-
-// $('#change-password-cancel').on('click', () => {})
-// change password cancel  // account cancel //  dismisses the user’s current screen and brings them back to their previous screen.
-
-// reset the form fields when not completed or on fail
+// show needs to hide account form
