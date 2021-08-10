@@ -48,8 +48,18 @@ const createNote = (note) => {
     }
   })
 }
+// VERSION 2.0 FEATURE //
+// const showNotes = () => {
+//   return $.ajax({
+//     url: config.apiUrl + '/notes',
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Bearer ' + store.token
+//     }
+//   })
+// }
 
-const readNote = () => {
+const showNote = () => {
   return $.ajax({
     url: config.apiUrl + '/notes',
     method: 'GET',
@@ -59,11 +69,10 @@ const readNote = () => {
   })
 }
 
-const updateNote = (note) => {
+const updateNote = () => {
   return $.ajax({
     url: config.apiUrl + '/notes',
     method: 'PATCH',
-    data: note,
     headers: {
       Authorization: 'Bearer ' + store.token
     }
@@ -86,7 +95,8 @@ module.exports = {
   logout,
   changePassword,
   createNote,
-  readNote,
+  // showNotes,
+  showNote,
   updateNote,
   destroyNote
 }

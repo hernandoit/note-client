@@ -1,7 +1,7 @@
 const getFormFields = require('../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
-const store = require('./../store')
+// const store = require('./../store')
 
 const onRegister = (e) => {
   // prevents the click event from refreshing the page
@@ -53,18 +53,20 @@ const onChangePassword = (e) => {
 }
 
 // NAVBAR //
-const onLogo = () => {
-// if user is logged in go back to notes home
-// else back to home screen
-}
 
-const onShowRegister = () => {
+// VERSION 2.0 FEATURE //
+// const onLogo = () => {
+// // if user is logged in go back to notes home
+// // else back to home screen
+// }
+
+const onShowRegisterForm = () => {
   $('#register').show()
   $('#login').hide()
   $('#change-password').hide()
 }
 
-const onShowLogin = () => {
+const onShowLoginForm = () => {
   $('#register').hide()
   $('#login').show()
   $('#change-password').hide()
@@ -75,15 +77,52 @@ const onShowChangePassword = () => {
   $('#login').hide()
   $('#change-password').show()
   $('#account').hide()
-  $('#note').hide()
+  $('.note').hide()
 }
 
-const onShowAccount = () => {
+const onShowAccountForm = () => {
   $('#register').hide()
   $('#login').hide()
   $('#change-password').hide()
   $('#account').show()
   $('#note').hide()
+}
+// BUTTONS FORM NAVBAR //
+const onShowCreateNote = () => {
+  $('#register').hide()
+  $('#login').hide()
+  $('#change-password').hide()
+  // $('#display-note').hide()
+  $('#account').hide()
+  $('#create-note').show()
+  $('#show-note').hide()
+  $('#update-note').hide()
+  $('#destroy-note').hide()
+}
+// const onShowNote
+
+const onShowUpdateNoteForm = () => {
+  $('#register').hide()
+  $('#login').hide()
+  $('#change-password').hide()
+  $('#display-note').show()
+  $('#account').hide()
+  $('#create-note').hide()
+  $('#show-note').show()
+  $('#update-note').hide()
+  $('#destroy-note').hide()
+}
+
+const onShowDestroyNoteForm = () => {
+  $('#register').hide()
+  $('#login').hide()
+  $('#change-password').hide()
+  $('#display-note').hide()
+  $('#account').hide()
+  $('#create-note').hide()
+  $('#show-note').hide()
+  $('#update-note').hide()
+  $('#destroy-note').show()
 }
 
 const onCreateNote = (e) => {
@@ -103,20 +142,30 @@ const onCreateNote = (e) => {
     .then(ui.onCreateNoteSuccess)
     .catch(ui.onCreateNoteFailure)
 }
+// VERSION 2.0 SHOW ALL USERS NOTES FEATURE //
+// const onShowNotes = (e) => {
+//   e.preventDefault()
 
-const onReadNote = (e) => {
+//   api.showNotes()
+//     .then(ui.onShowNotesSuccess)
+//     .catch(ui.onShowNotesFailure)
+// }
+
+const onShowUsersNotes = (e) => {
   e.preventDefault()
 
-  // console.log(store.user)
-  api.readNote()
-    .then(ui.onReadNoteSuccess)
-    .catch(ui.onReadNoteFailure)
+  api.showNote()
+    .then(ui.onShowNoteSuccess)
+    .catch(ui.onShowNoteFailure)
 }
 
 const onUpdateNote = (e) => {
   e.preventDefault()
 
-  api.updateNote()
+  const form = e.target
+  const data = getFormFields(form)
+
+  api.updateNote(data.note.id)
     .then(ui.onUpdateNoteSuccess)
     .catch(ui.onUpdateNoteFailure)
 }
@@ -124,7 +173,10 @@ const onUpdateNote = (e) => {
 const onDestroyNote = (e) => {
   e.preventDefault()
 
-  api.destroyNote()
+  const form = e.target
+  const data = getFormFields(form)
+
+  api.destroyNote(data.note.id)
     .then(ui.onDestroyNoteSuccess)
     .catch(ui.onDestroyNoteFailure)
 }
@@ -134,13 +186,17 @@ module.exports = {
   onLogin,
   onLogout,
   onChangePassword,
-  onLogo,
-  onShowRegister,
-  onShowLogin,
+  // onLogo,
+  onShowRegisterForm,
+  onShowLoginForm,
   onShowChangePassword,
-  onShowAccount,
+  onShowAccountForm,
+  onShowCreateNote,
+  onShowUsersNotes,
+  onShowUpdateNoteForm,
+  onShowDestroyNoteForm,
   onCreateNote,
-  onReadNote,
+  // onShowNotes,
   onUpdateNote,
   onDestroyNote
 }

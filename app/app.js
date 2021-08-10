@@ -7,32 +7,49 @@ const authEvents = require('./auth/events')
 
 $(() => {
   // NAVBAR LINKS //
-  $('#register-nav').on('click', authEvents.onShowRegister)
-  $('#login-nav').on('click', authEvents.onShowLogin)
-  $('#account-nav').on('click', authEvents.onShowAccount)
+  $('#register-nav').on('click', authEvents.onShowRegisterForm)
+  $('#login-nav').on('click', authEvents.onShowLoginForm)
+  $('#account-nav').on('click', authEvents.onShowAccountForm)
 
   // FORMS //
   $('#register').on('submit', authEvents.onRegister)
   $('#login').on('submit', authEvents.onLogin)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#create-note').on('submit', authEvents.onCreateNote)
+  // $('#read-note').on('submit', authEvents.onShowNote)
   $('#update-note').on('submit', authEvents.onUpdateNote)
+
+  // LOGGED IN NAVIGATION BUTTONS FOR FORMS //
+  $('#create-btn').on('click', authEvents.onShowCreateNote)
+  $('#show-btn').on('click', authEvents.onShowUsersNotes)
+  $('#update-btn').on('click', authEvents.onShowUpdateNoteForm)
+  $('#destroy-btn').on('click', authEvents.onShowDestroyNoteForm)
+
+  // VERSION 2.0 FEATURE //
+  // $('#index-btn').on('click', authEvents.onShowNotes)
 
   // LINKS //
   // no form attached, nothing to submit/ regular click event
   $('#logout').on('click', authEvents.onLogout)
   $('#change-password-btn').on('click', authEvents.onShowChangePassword)
-  $('#read-note').on('click', authEvents.onReadNote)
   $('#destroy-note').on('click', authEvents.onDestroyNote)
 
   // default visibility states
   $('#register').hide()
   $('#login').hide()
   $('#change-password').hide()
+
+  // $('#display-notes').hide()
+
   $('#account').hide()
   $('#account-nav').hide()
-  $('#note').hide()
-  $('#add-note-nav').hide()
+
+  // $('#add-note-nav').hide()
+  $('#btn-nav').hide()
+  $('#create-note').hide()
+  $('#show-note').hide()
+  $('#update-note').hide()
+  $('#destroy-note').hide()
 })
 
 // ORDERING/ STRUCTURE
