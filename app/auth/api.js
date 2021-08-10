@@ -84,8 +84,8 @@ const destroyNote = (data) => {
   return $.ajax({
     url: config.apiUrl + '/notes',
     method: 'DELETE',
+    data,
     headers: {
-      data,
       Authorization: 'Bearer ' + store.token
     }
   })

@@ -166,7 +166,6 @@ const onUpdateNote = (e) => {
   const form = e.target
   const data = getFormFields(form)
 
-  console.log(data)
   api.updateNote(data)
     .then(ui.onUpdateNoteSuccess)
     .catch(ui.onUpdateNoteFailure)

@@ -39,8 +39,6 @@ $(() => {
   $('#login').hide()
   $('#change-password').hide()
 
-  // $('#display-notes').hide()
-
   $('#account').hide()
   $('#account-nav').hide()
 
