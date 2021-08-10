@@ -160,7 +160,7 @@ const onShowNoteSuccess = (response) => {
     <p>Text: ${note.text}</p>`
   })
 
-  $('#display-note').html(noteHtml)
+  $('#display-notes').html(noteHtml)
 }
 
 const onShowNoteFailure = () => {
