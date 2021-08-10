@@ -142,7 +142,7 @@
         </div>
       </div>
 
-      <!-- NOTE BUTTONS -->
+      <!-- NOTE BUTTONS NAVBAR -->
       <div id="btn-nav">
         <input class="btn btn-primary" id="create-btn" type="button" value="Create">
         <!-- VERSION 2.0 BUTTON NAVBAR FEATURE -->
@@ -153,18 +153,18 @@
      </div>
 
 
-        <!-- CREATE NOTE -->
+        <!-- CREATE NOTE FORM -->
         <div class="form">
           <form id="create-note">
 
             <div class="mb-3">
             <label class="form-label">Title</label>
-            <input class="form-control" type="text" name="note[title]">
+            <input class="form-control" type="text" name="note[title]" placeholder="Title of Note">
             </div>
 
             <div class="mb-3">
-            <label class="form-label">Body</label>
-            <input class="form-control" type="text" name="note[text]">
+            <label class="form-label">Text</label>
+            <input class="form-control" type="text" name="note[text]" placeholder="Main text of your Note">
             </div>
 
             <input class="btn btn-primary" type="submit" value="Create Note">
@@ -172,16 +172,16 @@
           </form>
         </div>
 
-      <!-- SHOW NOTE -->
-      <form id="show-note">
-
-        <div class="mb-3">
-        <input class="btn btn-primary" type="submit" name="note[id]" value="Show Notes">
-        </div>
-
-      </form>
-
         <!-- UPDATE NOTE -->
+
+<h2>Update A Book</h2>
+  <input type="text" name="book[id]" id="book-id-update" placeholder="Book ID Here" required>
+  <input type="text" name="book[title]" placeholder="Book Title Here" required>
+  <input type="text" name="book[author]" placeholder="Book Author Here" required>
+  <button type="submit">Update Book</button>
+        <!--  -->
+        <!--  -->
+        <!--  -->
         <form id="update-note">
 
           <input class="btn btn-primary" type="submit" value="Update Note">
@@ -194,7 +194,7 @@
         </form>
 
         <!-- DELETE NOTE -->
-        <input type="button" value="Delete Note" class="btn btn-primary" id="destroy-note">
+        <!-- <input type="button" value="Delete Note" class="btn btn-primary" id="destroy-note"> -->
 
         <!-- DISPLAY NOTES -->
         <div class="announcements" id="display-notes"></div>

@@ -98,6 +98,7 @@ const onShowCreateNote = () => {
   $('#show-note').hide()
   $('#update-note').hide()
   $('#destroy-note').hide()
+  $('#display-notes').text(' ')
 }
 // const onShowNote
 

@@ -150,6 +150,7 @@ const onCreateNoteFailure = () => {
 // }
 
 const onShowNoteSuccess = (response) => {
+  $('#create-note').hide()
   $('#auth-message').text('Showing users created Notes')
   const notes = response.notes
 
@@ -164,6 +165,7 @@ const onShowNoteSuccess = (response) => {
 }
 
 const onShowNoteFailure = () => {
+  $('#create-note').hide()
   $('#auth-message').text('Unable to show user Notes')
 }
 
