@@ -151,14 +151,18 @@ const onCreateNoteFailure = () => {
 
 const onShowNoteSuccess = (response) => {
   $('#create-note').hide()
+  $('#update-note').hide()
+
   $('#auth-message').text('Showing users created Notes')
   const notes = response.notes
 
   let noteHtml = ''
 
   notes.forEach((note) => {
-    noteHtml += `<h3>Title: ${note.title} </h3>
-    <p>Text: ${note.text}</p>`
+    noteHtml += `<p>ID: ${note._id}</p>
+    <h3>Title: ${note.title} </h3>
+    <p>Text: ${note.text}</p>
+    `
   })
 
   $('#display-notes').html(noteHtml)

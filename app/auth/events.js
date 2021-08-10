@@ -110,7 +110,7 @@ const onShowUpdateNoteForm = () => {
   $('#account').hide()
   $('#create-note').hide()
   $('#show-note').show()
-  $('#update-note').hide()
+  $('#update-note').show()
   $('#destroy-note').hide()
 }
 
@@ -166,7 +166,8 @@ const onUpdateNote = (e) => {
   const form = e.target
   const data = getFormFields(form)
 
-  api.updateNote(data.note.id)
+  console.log(data)
+  api.updateNote(data)
     .then(ui.onUpdateNoteSuccess)
     .catch(ui.onUpdateNoteFailure)
 }
@@ -177,7 +178,7 @@ const onDestroyNote = (e) => {
   const form = e.target
   const data = getFormFields(form)
 
-  api.destroyNote(data.note.id)
+  api.destroyNote(data)
     .then(ui.onDestroyNoteSuccess)
     .catch(ui.onDestroyNoteFailure)
 }

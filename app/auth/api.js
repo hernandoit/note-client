@@ -69,21 +69,23 @@ const showNote = () => {
   })
 }
 
-const updateNote = () => {
+const updateNote = (data) => {
   return $.ajax({
     url: config.apiUrl + '/notes',
     method: 'PATCH',
+    data,
     headers: {
       Authorization: 'Bearer ' + store.token
     }
   })
 }
 
-const destroyNote = () => {
+const destroyNote = (data) => {
   return $.ajax({
     url: config.apiUrl + '/notes',
     method: 'DELETE',
     headers: {
+      data,
       Authorization: 'Bearer ' + store.token
     }
   })

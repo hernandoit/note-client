@@ -18,6 +18,7 @@ $(() => {
   $('#create-note').on('submit', authEvents.onCreateNote)
   // $('#read-note').on('submit', authEvents.onShowNote)
   $('#update-note').on('submit', authEvents.onUpdateNote)
+  $('#destroy-note').on('submit', authEvents.onDestroyNote)
 
   // LOGGED IN NAVIGATION BUTTONS FOR FORMS //
   $('#create-btn').on('click', authEvents.onShowCreateNote)
@@ -32,7 +33,6 @@ $(() => {
   // no form attached, nothing to submit/ regular click event
   $('#logout').on('click', authEvents.onLogout)
   $('#change-password-btn').on('click', authEvents.onShowChangePassword)
-  $('#destroy-note').on('click', authEvents.onDestroyNote)
 
   // default visibility states
   $('#register').hide()
@@ -62,3 +62,5 @@ $(() => {
 
 // $('#change-password-cancel').on('click', () => {})
 // change password cancel  // account cancel //  dismisses the user’s current screen and brings them back to their previous screen.
+
+// reset the form fields when not completed or on fail

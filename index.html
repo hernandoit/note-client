@@ -173,28 +173,36 @@
         </div>
 
         <!-- UPDATE NOTE -->
+        <div class="form">
+          <form id="update-note">
 
-<h2>Update A Book</h2>
-  <input type="text" name="book[id]" id="book-id-update" placeholder="Book ID Here" required>
-  <input type="text" name="book[title]" placeholder="Book Title Here" required>
-  <input type="text" name="book[author]" placeholder="Book Author Here" required>
-  <button type="submit">Update Book</button>
-        <!--  -->
-        <!--  -->
-        <!--  -->
-        <form id="update-note">
+            <div class="mb-3">
+              <input class="form-control" type="text" name="note[id]" placeholder="Note ID Here">
+            </div>
 
-          <input class="btn btn-primary" type="submit" value="Update Note">
+            <div class="mb-3">
+              <input class="form-control" type="text" name="note[title]" placeholder="Note Title Here">
+            </div>
 
-          <div class="mb-3">
-          <label class="form-label">Body</label>
-          <textarea class="form-control" type="text" name="note[text]"></textarea>
-          </div>
+            <div class="mb-3">
+              <input class="form-control" type="text" name="note[text]" placeholder="Note Text Here">
+            </div>
 
-        </form>
+            <input class="btn btn-primary" type="submit" value="Update Note">
+          </form>
+        </div>
 
         <!-- DELETE NOTE -->
-        <!-- <input type="button" value="Delete Note" class="btn btn-primary" id="destroy-note"> -->
+        <div class="form">
+          <form id="destroy-note">
+
+            <div class="mb-3">
+              <input class="form-control" type="text" name="note[id]" placeholder="Note ID Here">
+            </div>
+
+              <input class="btn btn-danger" type="button" value="Delete Note">
+          </form>
+        </div>
 
         <!-- DISPLAY NOTES -->
         <div class="announcements" id="display-notes"></div>
