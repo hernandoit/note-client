@@ -44,5 +44,3 @@ $(() => {
   $('#update-note').hide()
   $('#destroy-note').hide()
 })
-
-// show needs to hide account form

@@ -151,6 +151,7 @@ const onShowNoteSuccess = (response) => {
 }
 
 const onShowNoteFailure = () => {
+  $('#account-form').hide()
   $('#create-note').hide()
   $('#auth-message').text('Unable to show user Notes')
 }

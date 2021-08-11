@@ -69,6 +69,7 @@ const onShowChangePassword = () => {
   $('#change-password').show()
   $('#account').hide()
   $('.note').hide()
+  $('#display-notes').hide()
 }
 
 const onShowAccountForm = () => {
@@ -98,7 +99,7 @@ const onShowUpdateNoteForm = () => {
   $('#register').hide()
   $('#login').hide()
   $('#change-password').hide()
-  $('#display-note').show()
+  $('#display-notes').show()
   $('#account').hide()
   $('#create-note').hide()
   $('#show-note').show()
@@ -110,7 +111,7 @@ const onShowDestroyNoteForm = () => {
   $('#register').hide()
   $('#login').hide()
   $('#change-password').hide()
-  $('#display-note').hide()
+  $('#display-notes').show()
   $('#account').hide()
   $('#create-note').hide()
   $('#show-note').hide()
@@ -138,6 +139,8 @@ const onCreateNote = (e) => {
 
 const onShowUsersNotes = (e) => {
   e.preventDefault()
+  $('#account').hide()
+  $('#change-password').hide()
 
   api.showNote()
     .then(ui.onShowNoteSuccess)
