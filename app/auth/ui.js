@@ -146,7 +146,6 @@ const onShowNoteSuccess = (response) => {
     <p>Text: ${note.text}</p>
     `
   })
-
   $('#display-notes').html(noteHtml)
 }
 

@@ -60,7 +60,6 @@ const showNote = () => {
 }
 
 const updateNote = (data) => {
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/notes/' + data.note.id,
     method: 'PATCH',
