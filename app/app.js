@@ -32,7 +32,7 @@ $(() => {
 
   // default visibility states
   $('#register').hide()
-  $('#login').hide()
+  $('#login').show()
   $('#change-password').hide()
 
   $('#account').hide()

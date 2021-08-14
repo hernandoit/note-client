@@ -2,8 +2,8 @@ const store = require('./../store')
 
 const onRegisterSuccess = (response) => {
   $('#register').trigger('reset')
-  $('#register').hide()
-  $('#register-nav').hide()
+  $('#register').show()
+  $('#register-nav').show()
   $('#login').show()
   $('#login-nav').show()
   $('#change-password').hide()
@@ -11,7 +11,6 @@ const onRegisterSuccess = (response) => {
   $('#account').hide()
   $('#account-nav').hide()
   $('#note').hide()
-  $('#add-note-nav').hide()
   $('#btn-nav').hide()
   $('.note').hide()
 }
@@ -27,7 +26,6 @@ const onRegisterFailure = () => {
   $('#account').hide()
   $('#account-nav').hide()
   $('.note').hide()
-  $('#add-note-nav').hide()
   $('#btn-nav').hide()
 }
 
@@ -42,7 +40,6 @@ const onLoginSuccess = (response) => {
   $('#account').hide()
   $('#account-nav').show()
   $('#note').show()
-  $('#add-note-nav').show()
   $('#btn-nav').show()
   $('.note').hide()
   store.token = response.user.token
@@ -60,7 +57,6 @@ const onLoginFailure = () => {
   $('#account').hide()
   $('#account-nav').hide()
   $('.note').hide()
-  $('#add-note-nav').hide()
   $('#btn-nav').hide()
 }
 
@@ -74,7 +70,6 @@ const onLogoutSuccess = () => {
   $('#account').hide()
   $('#account-nav').hide()
   $('#note').hide()
-  $('#add-note-nav').hide()
   $('#btn-nav').hide()
   $('.note').hide()
 }
@@ -89,24 +84,19 @@ const onLogoutFailure = () => {
   $('#account').hide()
   $('#account-nav').hide()
   $('#note').hide()
-  $('#add-note-nav').hide()
   $('#btn-nav').hide()
-  $('.note').hide()
 }
 
 const onChangePasswordSuccess = () => {
   $('#register').hide()
   $('#register-nav').hide()
-  $('#login').show()
-  $('#login-nav').show()
+  $('#login').hide()
+  $('#login-nav').hide()
   $('#change-password').hide()
-  $('#auth-message').text('Your password has been successfully changed, please login again!')
+  $('#auth-message').text('Your password has been successfully changed!')
   $('#account').hide()
-  $('#account-nav').hide()
-  $('#note').hide()
-  $('#add-note-nav').hide()
-  $('.note').hide()
-  $('#btn-nav').hide()
+  $('#account-nav').show()
+  $('#btn-nav').show()
 }
 
 const onChangePasswordFailure = () => {
@@ -118,7 +108,6 @@ const onChangePasswordFailure = () => {
   $('#auth-message').text('Unable to change password please try again!')
   $('#account').hide()
   $('#account-nav').show()
-  $('.note').hide()
 }
 
 const onCreateNoteSuccess = (response) => {
