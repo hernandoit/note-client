@@ -106,6 +106,7 @@ const onChangePasswordSuccess = () => {
   $('#note').hide()
   $('#add-note-nav').hide()
   $('.note').hide()
+  $('#btn-nav').hide()
 }
 
 const onChangePasswordFailure = () => {
