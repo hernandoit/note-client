@@ -4,6 +4,7 @@
 // require('./example')
 
 const authEvents = require('./auth/events')
+const showEvents = require('./auth/ui')
 
 $(() => {
   // NAVBAR LINKS //
