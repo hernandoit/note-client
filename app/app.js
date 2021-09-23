@@ -8,9 +8,9 @@ const showEvents = require('./auth/ui')
 
 $(() => {
   // NAVBAR LINKS //
-  $('#register-nav').on('click', authEvents.onShowRegisterForm)
-  $('#login-nav').on('click', authEvents.onShowLoginForm)
-  $('#account-nav').on('click', authEvents.onShowAccountForm)
+  $('#register-nav').on('click', showEvents.onShowRegisterForm)
+  $('#login-nav').on('click', showEvents.onShowLoginForm)
+  $('#account-nav').on('click', showEvents.onShowAccountForm)
 
   // FORMS //
   $('#register').on('submit', authEvents.onRegister)
@@ -21,15 +21,15 @@ $(() => {
   $('#destroy-note').on('submit', authEvents.onDestroyNote)
 
   // LOGGED IN NAVIGATION BUTTONS FOR FORMS //
-  $('#create-btn').on('click', authEvents.onShowCreateNote)
+  $('#create-btn').on('click', showEvents.onShowCreateNote)
   $('#show-btn').on('click', authEvents.onShowUsersNotes)
-  $('#update-btn').on('click', authEvents.onShowUpdateNoteForm)
-  $('#destroy-btn').on('click', authEvents.onShowDestroyNoteForm)
+  $('#update-btn').on('click', showEvents.onShowUpdateNoteForm)
+  $('#destroy-btn').on('click', showEvents.onShowDestroyNoteForm)
 
   // LINKS //
   // no form attached, nothing to submit/ regular click event
   $('#logout').on('click', authEvents.onLogout)
-  $('#change-password-btn').on('click', authEvents.onShowChangePassword)
+  $('#change-password-btn').on('click', showEvents.onShowChangePassword)
 
   // default visibility states
   $('#register').hide()

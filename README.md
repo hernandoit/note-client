@@ -1,10 +1,13 @@
  # Note
-This is the Front end for our Note app.  
+This is the Front end for our Note taking app.  
+
 
 ## `Setup Steps`
-1. Fork and clone this repository.
-2. Create a new branch for your work.
-3. Checkout to your new branch name.
+1. Fork and clone this repository into your projects location 
+   - `git clone git@github.com:<your github account name here>/react-material-design.git`
+2. Create a new branch, and name it after your project. 
+2. Checkout to your newly created branch.
+   - `git checkout -b <your projects name here>`
 4. Install dependencies with ```npm install```.
 
 ## `Important Links`
@@ -69,4 +72,4 @@ This is the Front end for our Note app.
    2. Would like to eventually start a note without signing in, and save that note when registered
 
 ## `Images`
-[WireFrame](app/img/Note-Wireframe.png)
+![WireFrame](app/img/Note-Wireframe.png)

@@ -163,6 +163,75 @@ const onDestroyNoteFailure = () => {
   $('#auth-message').text('Unable to delete Note')
 }
 
+
+const onShowRegisterForm = () => {
+  $('#register').show()
+  $('#login').hide()
+  $('#change-password').hide()
+}
+
+const onShowLoginForm = () => {
+  $('#register').hide()
+  $('#login').show()
+  $('#change-password').hide()
+}
+
+const onShowChangePassword = () => {
+  $('#register').hide()
+  $('#login').hide()
+  $('#change-password').show()
+  $('#account').hide()
+  $('.note').hide()
+  $('#display-notes').hide()
+}
+
+const onShowAccountForm = () => {
+  $('#register').hide()
+  $('#login').hide()
+  $('#change-password').hide()
+  $('#account').show()
+  $('#create-note').hide()
+  $('#display-notes').hide()
+  $('#update-note').hide()
+  $('#destroy-note').hide()
+}
+// BUTTONS FORM NAVBAR //
+const onShowCreateNote = () => {
+  $('#register').hide()
+  $('#login').hide()
+  $('#change-password').hide()
+  $('#account').hide()
+  $('#create-note').show()
+  $('#show-note').hide()
+  $('#update-note').hide()
+  $('#destroy-note').hide()
+  $('#display-notes').hide()
+}
+
+const onShowUpdateNoteForm = () => {
+  $('#register').hide()
+  $('#login').hide()
+  $('#change-password').hide()
+  $('#display-notes').show()
+  $('#account').hide()
+  $('#create-note').hide()
+  $('#show-note').show()
+  $('#update-note').show()
+  $('#destroy-note').hide()
+}
+
+const onShowDestroyNoteForm = () => {
+  $('#register').hide()
+  $('#login').hide()
+  $('#change-password').hide()
+  $('#display-notes').show()
+  $('#account').hide()
+  $('#create-note').hide()
+  $('#show-note').hide()
+  $('#update-note').hide()
+  $('#destroy-note').show()
+}
+
 module.exports = {
   onRegisterSuccess,
   onRegisterFailure,
@@ -179,5 +248,12 @@ module.exports = {
   onUpdateNoteSuccess,
   onUpdateNoteFailure,
   onDestroyNoteSuccess,
-  onDestroyNoteFailure
+  onDestroyNoteFailure,
+  onShowRegisterForm,
+  onShowLoginForm,
+  onShowChangePassword,
+  onShowAccountForm,
+  onShowCreateNote,
+  onShowUpdateNoteForm,
+  onShowDestroyNoteForm
 }
