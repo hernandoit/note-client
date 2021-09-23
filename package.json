@@ -17,7 +17,7 @@
     "babel-loader": "^8.2.2",
     "babel-polyfill": "^6.26.0",
     "clone": "^2.1.2",
-    "css-loader": "^5.2.6",
+    "css-loader": "^5.2.7",
     "eslint": "^7.27.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.23.3",
